@@ -26,14 +26,14 @@ router.get('/:title', async (req, res) => {
 // Add task
 router.post('/', async (req, res) => {
     const result = await service.addTask(req.body)
-    res.status(200).send("Task successfully added")
+    // res.status(200).send("Task successfully added")
     res.send(result)
 }) 
 
 // Update Task
 router.put('/:title', async (req, res) => {
-    await service.updateTask(req.body, req.params.title)
-    res.status(200).send("Task successfully updated")
+    const result = await service.updateTask(req.body, req.params.title)
+    res.status(200).send(result)
 })
 
 // Delete all completed Tasks

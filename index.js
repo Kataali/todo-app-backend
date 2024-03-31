@@ -10,10 +10,10 @@ app.use(bodyparser.json())
 
 app.use('/todo-api/tasks', tasksRoute)
     //Global Error handling
-app.use((err, req, res, next) => {
-    console.log(err)
-    res.status(err.status||500).send("OOPS!!Something went wrong!")
-})
+// app.use((err, req, res, next) => {
+//     console.log(err)
+//     res.status(err.status||500).send("OOPS!!Something went wrong!")
+// })
 
 
 // To Check if the database is actually connected or not since there is no way of checking before creating the pool
